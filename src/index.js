@@ -1,13 +1,15 @@
 import reportWebVitals from './reportWebVitals';
+import "./index.css"
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
+import skin1 from "./Avatar/BODY/Skin_01.png"
 
 // the first very simple and recommended way:
 const LionImage = ({x,y}) => {
-  const [image] = useImage('https://konvajs.org/assets/lion.png');
-  return <Image  x={x} y={y} image={image} />;
+  const [image] = useImage(skin1);
+  return <Image  x={x} y={y} image={image} width={900} height={900} />;
 };
 
 // custom component that will handle loading image from url
@@ -21,11 +23,11 @@ const LionImage = ({x,y}) => {
 class App extends Component {
   render() {
     return (
-      <Stage width={window.innerWidth} height={window.innerHeight}>
+      <Stage width={2000} height={4000}>
         <Layer>
           {/* <URLImage src="https://konvajs.org/assets/yoda.jpg" x={150} /> */}
           <LionImage  x={10} y={20} />
-          <LionImage x={20} y={40} />
+          {/* <LionImage x={20} y={40} /> */}
         </Layer>
       </Stage>
     );
