@@ -13,7 +13,7 @@ import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
 // the first very simple and recommended way:
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
-  return <Image  image={image} width={900} height={900} />;
+  return <Image  image={image}  />;
 };
 
 // custom component that will handle loading image from url
@@ -22,25 +22,51 @@ const LionImage = ({x,y,imageSource}) => {
 // VERY IMPORTANT NOTES:
 // at first we will set image state to null
 // and then we will set it to native image instance when it is loaded
+function downloadURI(uri, name) {
+  var link = document.createElement('a');
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 
-class App extends Component {
-  render() {
+const App = () => {
+  const stageRef = React.useRef(null);
+
+
+   const handleExport = () => {
+    const uri = stageRef.current.toDataURL();
+    console.log(uri);
+    // we also can save uri as file
+    // but in the demo on Konva website it will not work
+    // because of iframe restrictions
+    // but feel free to use it in your apps:
+    downloadURI(uri, 'stage.png');
+  };
+  
+
     return (
-      <Stage width={2000} height={4000}>
+      <div>
+          <button onClick={handleExport}>Click here to log stage data URL</button>
+    
+      <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
           {/* <URLImage src="https://konvajs.org/assets/yoda.jpg" x={150} /> */}
+          <LionImage imageSource ={ears} x={20} y={40} />
           <LionImage imageSource ={skin1} x={10} y={20} />
           <LionImage imageSource ={eye} x={20} y={40} />
           <LionImage imageSource ={eyeBrow} x={20} y={40} />
-          <LionImage imageSource ={ears} x={20} y={40} />
           <LionImage imageSource ={mouth} x={20} y={40} />
           <LionImage imageSource ={nose} x={20} y={40} />
           
         </Layer>
       </Stage>
+      </div>
+
     );
-  }
+
 }
 render(<App />, document.getElementById('root'));
 
