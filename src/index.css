@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+background-color: #eee;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.konvajs-content{
+  width: 2000px !important;
+  height: 2000px !important;
+  border: solid 1px #888;
+  /* background-color: tan; */
 }

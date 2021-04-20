@@ -5,11 +5,15 @@ import { render } from 'react-dom';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
 import skin1 from "./Avatar/BODY/Skin_01.png"
-
+import eye from "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png"
+import eyeBrow from "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png"
+import ears from "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png"
+import mouth from "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png"
+import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
 // the first very simple and recommended way:
-const LionImage = ({x,y}) => {
-  const [image] = useImage(skin1);
-  return <Image  x={x} y={y} image={image} width={900} height={900} />;
+const LionImage = ({x,y,imageSource}) => {
+  const [image] = useImage(imageSource);
+  return <Image  image={image} width={900} height={900} />;
 };
 
 // custom component that will handle loading image from url
@@ -26,8 +30,13 @@ class App extends Component {
       <Stage width={2000} height={4000}>
         <Layer>
           {/* <URLImage src="https://konvajs.org/assets/yoda.jpg" x={150} /> */}
-          <LionImage  x={10} y={20} />
-          {/* <LionImage x={20} y={40} /> */}
+          <LionImage imageSource ={skin1} x={10} y={20} />
+          <LionImage imageSource ={eye} x={20} y={40} />
+          <LionImage imageSource ={eyeBrow} x={20} y={40} />
+          <LionImage imageSource ={ears} x={20} y={40} />
+          <LionImage imageSource ={mouth} x={20} y={40} />
+          <LionImage imageSource ={nose} x={20} y={40} />
+          
         </Layer>
       </Stage>
     );
