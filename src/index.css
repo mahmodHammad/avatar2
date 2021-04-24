@@ -16,6 +16,15 @@ code {
 .konvajs-content{
   /* width: 200px !important; */
   /* height: 200px !important; */
+  width: 50vw;
+  height: 50vw;
   border: solid 3px #888;
   /* background-color: tan; */
+}
+canvas{
+  display: none;
+  border: 10px solid red  !important;
+  width: 40vw !important;
+  height: 40vw !important;
+  padding: 100px;
 }
