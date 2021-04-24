@@ -4,12 +4,6 @@ import React, {useState } from 'react';
 import { render } from 'react-dom';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
-// import skinn1 from "./Avatar/BODY/Skin_01.png"
-// import eye from "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png"
-// import eyeBrow from "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png"
-// import ears from "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png"
-// import mouth from "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png"
-// import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
 import UI from "./UI"
 
 const items ={
@@ -29,17 +23,25 @@ const items ={
       patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
       threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
     }
-  },
-  // skin2:{
-  //   body:require("./Avatar/BODY/Skin_02.png").default,
-  //   eye:{circular:require( "./Avatar/EYES/EYES_02 (Circular)/EYES_02_Skin_02.png").default},
-  //   eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
-  //   ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
-  //   mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
-  //   nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
-    
-  // }
+  
+  }
 }
+
+/*
+
+the name of each item is the same in all skin colors
+TODO:
+  make a state with the each item (eye, galsses...)
+  the state will hole name, uri
+  to change the item:
+    1.get array of the keys
+    2.look for the index of the current key
+    3.get the next/previous index
+    4.get the corrosponding item
+    5.setState that item
+
+*/
+
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
   return <Image  image={image}  />;
@@ -64,7 +66,9 @@ function downloadURI(uri, name) {
 const App = () => {
   const stageRef = React.useRef(null);
 const [skin,setSkin] = useState(items.skin1)
-const {ears,body,eye,eyeBrow,mouth,nose,glasses} =skin
+const [glasses,setGlasses] = useState(skin.glasses.JOY)
+const {ears,body,eye,eyeBrow,mouth,nose} =skin
+
 console.log("hey ",items.skin1)
 
    const handleExport = () => {
@@ -80,11 +84,14 @@ console.log("hey ",items.skin1)
   function changeSkin(){
     setSkin(items.skin1)
   }
+  function changeGlasses(){
+    setGlasses(skin.glasses.Round)
+  }
 
     return (
       <div>
-        <UI handleExport={handleExport}/>
-    <button onClick={changeSkin}>Change skin </button>
+        <UI handleExport={handleExport} />
+    <button onClick={changeGlasses}>Change skin </button>
       <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
           <LionImage imageSource ={ears} x={20} y={40} />
@@ -93,7 +100,7 @@ console.log("hey ",items.skin1)
           <LionImage imageSource ={eyeBrow} x={20} y={40} />
           <LionImage imageSource ={mouth} x={20} y={40} />
           <LionImage imageSource ={nose} x={20} y={40} />
-          <LionImage imageSource ={glasses.threeD} x={20} y={40} />
+          <LionImage imageSource ={glasses} x={20} y={40} />
           
         </Layer>
       </Stage>
