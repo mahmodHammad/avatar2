@@ -1,44 +1,36 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 
-export default function AC({ title , mesh , colors  }) {
-  const bgs = {
-    gray: 0xaaaaaa,
-    yellow:0xFFEB3B,
-    Green1:0x69F0AE,
-    cyan:0x00E5FF,
-    Teal:0x1DE9B6,
-    Purple:0x651FFF,
-    indigo:0x3D5AFE,
-    coolRed:0xFF1744,
-    Pink:0xF50057,
-    red: 0xff0000,
-    green: 0x00ff00,
-    blue: 0x0000ff,
-  };
-  const bgsNames = Object.keys(bgs);
+export default function AC({ title , items,changeItem }) {
 
-  const [activeBGIndex, setactiveBGIndex] = useState(0);
+  const ItemNames = Object.keys(items);
+
+  const [activeItemIndex, setactiveItemIndex] = useState(0);
   useEffect(() => {
-    // changeSceneBackground(bgs[bgsNames[activeBGIndex]]);
+    // changeSceneBackground(bgs[ItemNames[activeItemIndex]]);
   }, []);
 
   function syencChangeBackground(index) {
-    setactiveBGIndex(index);
-    // changeSceneBackground(bgs[bgsNames[index]]);
+    setactiveItemIndex(index);
+    // console.log("items is ",items[activeItemIndex][index])
+    console.log("ITEMS",items)
+    console.log("active",items[ItemNames[index]])
+
+    changeItem(items[ItemNames[index]])
+    // changeSceneBackground(bgs[ItemNames[index]]);
   }
 
   function onBGChange(index) {
     //   index == 1 => left , index==0 => right
 
     if (index) {
-      activeBGIndex < bgsNames.length - 1
-        ? syencChangeBackground(activeBGIndex + 1)
+      activeItemIndex < ItemNames.length - 1
+        ? syencChangeBackground(activeItemIndex + 1)
         : syencChangeBackground(0);
     } else {
-        activeBGIndex > 0
-        ? syencChangeBackground(activeBGIndex - 1)
-        : syencChangeBackground(bgsNames.length - 1);
+        activeItemIndex > 0
+        ? syencChangeBackground(activeItemIndex - 1)
+        : syencChangeBackground(ItemNames.length - 1);
     }
   }
 
@@ -48,22 +40,15 @@ export default function AC({ title , mesh , colors  }) {
         <div className="title">{title}</div>
         <div className="change">
             <button className="l-btn btn" onClick={()=>onBGChange(0)}>{`<`}</button>
-            <span className="center">{bgsNames[activeBGIndex]}</span>
+            <span className="center">{ItemNames[activeItemIndex]}</span>
             <button className="r-btn btn" onClick={()=>onBGChange(1)}>{`>`}</button>
         </div>
     </div>
     // <div className="container">
     //   <button onClick={() => onBGChange(0)}>{`<`}</button>
-    //   <span className="title">{bgsNames[activeBGIndex]}</span>
+    //   <span className="title">{ItemNames[activeItemIndex]}</span>
     //   <button onClick={() => onBGChange(1)}>{`>`}</button>
       // <button onClick={()=>takeScreenshot(2000 ,2000 )} className="SH">Take SH</button>
     // </div>
   );
 }
-
-
-//clean up to prevent memory leak
-//   componentWillUnmount() {
-//     window.cancelAnimationFrame(requestID);
-//     controls.dispose();
-//   }
