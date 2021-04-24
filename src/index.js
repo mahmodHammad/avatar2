@@ -124,8 +124,7 @@ console.log("hey ",items.skin1)
     return (
       <div>
         <UI handleExport={handleExport} changeGlasses={changeGlasses} 
-        glasses={glasses} changeSkin={changeSkin} skins={items}/>
-    <button onClick={changeSkin}>Change skin </button>
+        glasses={glasses} changeSkin={changeSkin} skins={items}/> 
       <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
           <LionImage imageSource ={ears} x={20} y={40} />

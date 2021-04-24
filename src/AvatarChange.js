@@ -37,7 +37,7 @@ export default function AC({ title , items,changeItem }) {
   return (
       
     <div className="box">
-        <div className="title">{title}</div>
+        <span className="title">{title}</span>
         <div className="change">
             <button className="l-btn btn" onClick={()=>onBGChange(0)}>{`<`}</button>
             <span className="center">{ItemNames[activeItemIndex]}</span>
