@@ -20,15 +20,25 @@ const items ={
     ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png").default,
     mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png").default,
     nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png").default,
+    glasses:{
+      Hippie:require("./Avatar/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_01.png").default,
+      Sunglasses:require("./Avatar/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_01.png").default,
+      Regular:require("./Avatar/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_01.png").default,
+      JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_01.png").default,
+      Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_01.png").default,
+      patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
+      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
+    }
   },
-  skin2:{
-    body:require("./Avatar/BODY/Skin_02.png").default,
-    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_02.png").default,
-    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
-    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
-    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
-    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
-  }
+  // skin2:{
+  //   body:require("./Avatar/BODY/Skin_02.png").default,
+  //   eye:{circular:require( "./Avatar/EYES/EYES_02 (Circular)/EYES_02_Skin_02.png").default},
+  //   eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
+  //   ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
+  //   mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
+  //   nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
+    
+  // }
 }
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
@@ -53,8 +63,8 @@ function downloadURI(uri, name) {
 
 const App = () => {
   const stageRef = React.useRef(null);
-const [skin,setSkin] = useState(items.skin2)
-const {ears,body,eye,eyeBrow,mouth,nose} =skin
+const [skin,setSkin] = useState(items.skin1)
+const {ears,body,eye,eyeBrow,mouth,nose,glasses} =skin
 console.log("hey ",items.skin1)
 
    const handleExport = () => {
@@ -77,13 +87,13 @@ console.log("hey ",items.skin1)
     <button onClick={changeSkin}>Change skin </button>
       <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
-          {/* <URLImage src="https://konvajs.org/assets/yoda.jpg" x={150} /> */}
           <LionImage imageSource ={ears} x={20} y={40} />
           <LionImage imageSource ={body} x={10} y={20} />
           <LionImage imageSource ={eye} x={20} y={40} />
           <LionImage imageSource ={eyeBrow} x={20} y={40} />
           <LionImage imageSource ={mouth} x={20} y={40} />
           <LionImage imageSource ={nose} x={20} y={40} />
+          <LionImage imageSource ={glasses.threeD} x={20} y={40} />
           
         </Layer>
       </Stage>
