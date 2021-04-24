@@ -1,17 +1,35 @@
 import reportWebVitals from './reportWebVitals';
 import "./index.css"
-import React, { Component } from 'react';
+import React, {useState } from 'react';
 import { render } from 'react-dom';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
-import skin1 from "./Avatar/BODY/Skin_01.png"
-import eye from "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png"
-import eyeBrow from "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png"
-import ears from "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png"
-import mouth from "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png"
-import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
+// import skinn1 from "./Avatar/BODY/Skin_01.png"
+// import eye from "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png"
+// import eyeBrow from "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png"
+// import ears from "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png"
+// import mouth from "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png"
+// import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
 import UI from "./UI"
-// the first very simple and recommended way:
+
+const items ={
+  skin1:{
+    body:require("./Avatar/BODY/Skin_01.png").default,
+    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png").default,
+    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png").default,
+    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png").default,
+    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png").default,
+    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png").default,
+  },
+  skin2:{
+    body:require("./Avatar/BODY/Skin_02.png").default,
+    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_02.png").default,
+    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
+    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
+    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
+    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
+  }
+}
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
   return <Image  image={image}  />;
@@ -35,7 +53,9 @@ function downloadURI(uri, name) {
 
 const App = () => {
   const stageRef = React.useRef(null);
-
+const [skin,setSkin] = useState(items.skin2)
+const {ears,body,eye,eyeBrow,mouth,nose} =skin
+console.log("hey ",items.skin1)
 
    const handleExport = () => {
     const uri = stageRef.current.toDataURL();
@@ -47,17 +67,19 @@ const App = () => {
     downloadURI(uri, 'stage.png');
   };
   
+  function changeSkin(){
+    setSkin(items.skin1)
+  }
 
     return (
       <div>
-        <UI/>
-          <button onClick={handleExport}>Click here to log stage data URL</button>
-    
+        <UI handleExport={handleExport}/>
+    <button onClick={changeSkin}>Change skin </button>
       <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
           {/* <URLImage src="https://konvajs.org/assets/yoda.jpg" x={150} /> */}
           <LionImage imageSource ={ears} x={20} y={40} />
-          <LionImage imageSource ={skin1} x={10} y={20} />
+          <LionImage imageSource ={body} x={10} y={20} />
           <LionImage imageSource ={eye} x={20} y={40} />
           <LionImage imageSource ={eyeBrow} x={20} y={40} />
           <LionImage imageSource ={mouth} x={20} y={40} />

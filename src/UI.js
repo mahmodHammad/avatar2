@@ -66,7 +66,7 @@ function extract(atrr){
     return atrr
 }
 
-function UI() {
+function UI({handleExport}) {
 const [hair, sethair] = useState(undefined);
 const [hat, sethat] = useState(undefined);
 const [face, setface] = useState(null);
@@ -104,7 +104,7 @@ const Allhairs={
          <BGChange title="Background Color" mesh={cloth} colors={Colors}/> 
 
          <div className="box">
-        <button className="center submit">Submit</button>
+        <button onClick={handleExport} className="center submit">Submit</button>
     </div>
          
         </div> 

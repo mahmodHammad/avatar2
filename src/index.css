@@ -29,10 +29,10 @@ code {
   width: 40vw !important;
   height: 40vw !important;
   border: solid 3px #888;
-  border-top-left-radius: 500px;
-  border-top-right-radius: 500px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 20px;
   background-color: #444;
   /* background-color: tan; */
 }
