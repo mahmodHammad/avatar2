@@ -23,8 +23,41 @@ const items ={
       patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
       threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
     }
-  
-  }
+  },
+  skin2:{
+    body:require("./Avatar/BODY/Skin_02.png").default,
+    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_02.png").default,
+    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
+    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
+    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
+    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
+    glasses:{
+      Regular:require("./Avatar/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_02.png").default,
+      Hippie:require("./Avatar/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_02.png").default,
+      Sunglasses:require("./Avatar/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_02.png").default,
+      JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_02.png").default,
+      Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_02.png").default,
+      patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_02.png").default,
+      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_02.png").default
+    }
+  },
+  skin3:{
+    body:require("./Avatar/BODY/Skin_03.png").default,
+    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_03.png").default,
+    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_03.png").default,
+    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin03.png").default,
+    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin03.png").default,
+    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_03.png").default,
+    glasses:{
+      Regular:require("./Avatar/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_03.png").default,
+      Hippie:require("./Avatar/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_03.png").default,
+      Sunglasses:require("./Avatar/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_03.png").default,
+      JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_03.png").default,
+      Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_03.png").default,
+      patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_03.png").default,
+      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_03.png").default
+    }
+  },
 }
 
 /*
@@ -81,8 +114,8 @@ console.log("hey ",items.skin1)
     downloadURI(uri, 'stage.png');
   };
   
-  function changeSkin(){
-    setSkin(items.skin1)
+  function changeSkin(skintone){
+    setSkin(skintone)
   }
   function changeGlasses(glass){
     setGlasses(glass)
@@ -90,8 +123,9 @@ console.log("hey ",items.skin1)
 
     return (
       <div>
-        <UI handleExport={handleExport} changeGlasses={changeGlasses} glasses={glasses} />
-    <button onClick={changeGlasses}>Change skin </button>
+        <UI handleExport={handleExport} changeGlasses={changeGlasses} 
+        glasses={glasses} changeSkin={changeSkin} skins={items}/>
+    <button onClick={changeSkin}>Change skin </button>
       <Stage width={4000} height={4000} ref={stageRef}>
         <Layer>
           <LionImage imageSource ={ears} x={20} y={40} />
