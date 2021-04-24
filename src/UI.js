@@ -91,11 +91,22 @@ const Allhairs={
              <AvatarChangeColor title="Hair Color" mesh={hair}   colors={hairColors}/>
 
         <AvatarChangeColor title="Cloth Color" mesh={cloth} colors={clothColors}/> 
+        <AvatarChangeColor title="Cloth Color" mesh={cloth} colors={clothColors}/> 
+        <AvatarChangeColor title="Cloth Color" mesh={cloth} colors={clothColors}/> 
+        <AvatarChangeColor title="Cloth Color" mesh={cloth} colors={clothColors}/> 
+        <AvatarChangeColor title="Cloth Color" mesh={cloth} colors={clothColors}/> 
         </div>
          <div className="r-panel panel">
             {face!==undefined?  <AvatarChangeColor title="Face Color" mesh={face}  colors={faceColors}/>:null} 
           <AvatarChangeVisible title="hair style" Allmeshes={Allhairs}/>
+          <AvatarChangeVisible title="hair style" Allmeshes={Allhairs}/>
+          <AvatarChangeVisible title="hair style" Allmeshes={Allhairs}/>
          <BGChange title="Background Color" mesh={cloth} colors={Colors}/> 
+
+         <div className="box">
+        <button className="center submit">Submit</button>
+    </div>
+         
         </div> 
         </React.Fragment>
   );

@@ -1,12 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-background-color: #aaa;
+html {
+  height: 100%;
 }
+body {
+  background-color: #000;
+  height: 100%;
+
+  margin: 0;
+  /* overflow: hidden; */
+
+/* background-color: #eee; */
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -16,13 +26,14 @@ code {
 .konvajs-content{
   /* width: 200px !important; */
   /* height: 200px !important; */
-  width: 50vw !important;
-  height: 50vw !important;
+  width: 40vw !important;
+  height: 40vw !important;
   border: solid 3px #888;
   border-top-left-radius: 500px;
   border-top-right-radius: 500px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 10px;
+  background-color: #444;
   /* background-color: tan; */
 }
 canvas{
@@ -38,34 +49,6 @@ canvas{
 
 
 /* OLDDDDDDDDDDD */
-
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-
-  margin: 0;
-  /* overflow: hidden; */
-
-/* background-color: #eee; */
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  align-content: center;
-}
-
-/* canvas {
-  background: radial-gradient(circle, #eaeaea 0%, #777 100%);
-width: 90vw !important;
-  height: 90vw  !important;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  display: block;  
-} */
-
 
 .icon {
   justify-content: right;
@@ -104,7 +87,7 @@ width: 90vw !important;
   text-align: center;
   width: 100%;
   display: block;
-  margin: 30px 0;
+  margin: 10px 0;
 
 }
 
@@ -127,7 +110,7 @@ width: 90vw !important;
 }
 
 .btn{
-  background-color: #02f7b5;
+  background-color: #333;
   color: #fff;
   font-weight: bold;
   font-size: 17px;
@@ -138,6 +121,12 @@ width: 90vw !important;
   border-radius: 100px;
 }
 
+.submit{
+  border: none;
+  width: 120px  !important;
+  background-color: #02f7b5;
+  font-weight: bold;
+}
 .SH{
   /* text-align: center; */
   background-color: #fff;
