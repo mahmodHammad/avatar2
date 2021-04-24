@@ -10,6 +10,7 @@ import eyeBrow from "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01
 import ears from "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png"
 import mouth from "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png"
 import nose from "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png"
+import UI from "./UI"
 // the first very simple and recommended way:
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
@@ -49,6 +50,7 @@ const App = () => {
 
     return (
       <div>
+        <UI/>
           <button onClick={handleExport}>Click here to log stage data URL</button>
     
       <Stage width={4000} height={4000} ref={stageRef}>
