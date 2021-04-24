@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 body {
-  background-color: #000;
+  background-color: #f3f3f3;
   height: 100%;
 
   margin: 0;
@@ -28,12 +28,13 @@ code {
   /* height: 200px !important; */
   width: 40vw !important;
   height: 40vw !important;
-  border: solid 3px #888;
+  /* border: solid 1px #888; */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: #444;
+  background-color: #8bacdd;
+  background-image: linear-gradient(-135deg, #bed0ec, #7aa0d8);
   /* background-color: tan; */
 }
 canvas{
@@ -42,11 +43,6 @@ canvas{
   height: 100% !important;
   padding: 100px;
 }
-
-
-
-
-
 
 /* OLDDDDDDDDDDD */
 
@@ -106,7 +102,22 @@ canvas{
   padding: 8px;
   margin: 0 10px;
   border-radius: 200px;
-  font-size: 17px;
+  font-size: 15px;
+
+
+
+  width: 140px;
+  /* height: 45px; */
+  /* font-family: 'Roboto', sans-serif; */
+
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn{
@@ -119,6 +130,7 @@ canvas{
   height: 30px;
   border: none;
   border-radius: 100px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .submit{
@@ -126,6 +138,17 @@ canvas{
   width: 120px  !important;
   background-color: #02f7b5;
   font-weight: bold;
+
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.submit:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  /* color: #fff; */
+  transform: translateY(-6px);
 }
 .SH{
   /* text-align: center; */
