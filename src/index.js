@@ -8,37 +8,37 @@ import UI from "./UI"
 
 const items ={
   skin1:{
-    body:require("./Avatar/BODY/Skin_01.png").default,
-    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png").default,
-    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png").default,
-    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin01.png").default,
-    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png").default,
-    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png").default,
+    body:require("./low/BODY/Skin_01.png").default,
+    eye:require( "./low/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png").default,
+    eyeBrow:require( "./low/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_01.png").default,
+    ears:require( "./low/EARS/EARS_01 (Regular)/Ears01_Skin01.png").default,
+    mouth:require( "./low/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png").default,
+    nose:require( "./low/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png").default,
     glasses:{
-      Regular:require("./Avatar/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_01.png").default,
-      Hippie:require("./Avatar/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_01.png").default,
-      Sunglasses:require("./Avatar/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_01.png").default,
-      JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_01.png").default,
-      Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_01.png").default,
-      patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
-      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
+      Regular:require("./low/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_01.png").default,
+      Hippie:require("./low/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_01.png").default,
+      Sunglasses:require("./low/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_01.png").default,
+      JOY:require("./low/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_01.png").default,
+      Round: require("./low/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_01.png").default,
+      patch:require("./low/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
+      threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
     }
   },
   skin2:{
-    body:require("./Avatar/BODY/Skin_02.png").default,
-    eye:require( "./Avatar/EYES/EYES_01 (Regular oval)/EYES_01_Skin_02.png").default,
-    eyeBrow:require( "./Avatar/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
-    ears:require( "./Avatar/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
-    mouth:require( "./Avatar/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
-    nose:require( "./Avatar/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
+    body:require("./low/BODY/Skin_02.png").default,
+    eye:require( "./low/EYES/EYES_01 (Regular oval)/EYES_01_Skin_02.png").default,
+    eyeBrow:require( "./low/EYEBROWS/EYEBROWS_01 (Slanted outward)/EYEBROWS_01_Skin_02.png").default,
+    ears:require( "./low/EARS/EARS_01 (Regular)/Ears01_Skin02.png").default,
+    mouth:require( "./low/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin02.png").default,
+    nose:require( "./low/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_02.png").default,
     glasses:{
-      Regular:require("./Avatar/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_02.png").default,
-      Hippie:require("./Avatar/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_02.png").default,
-      Sunglasses:require("./Avatar/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_02.png").default,
-      JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_02.png").default,
-      Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_02.png").default,
-      patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_02.png").default,
-      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_02.png").default
+      Regular:require("./low/GLASSES/GLASSES_01 (Regular glasses)/GLASSES_01_Skin_02.png").default,
+      Hippie:require("./low/GLASSES/GLASSES_03 (Hippie)/GLASSES_03_Skin_02.png").default,
+      Sunglasses:require("./low/GLASSES/GLASSES_04 (Sunglasses)/GLASSES_04_Skin_02.png").default,
+      JOY:require("./low/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_02.png").default,
+      Round: require("./low/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_02.png").default,
+      patch:require("./low/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_02.png").default,
+      threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_02.png").default
     }
   },
   skin3:{
@@ -125,7 +125,7 @@ console.log("hey ",items.skin1)
       <div>
         <UI handleExport={handleExport} changeGlasses={changeGlasses} 
         glasses={glasses} changeSkin={changeSkin} skins={items}/> 
-      <Stage width={4000} height={4000} ref={stageRef}>
+      <Stage width={1000} height={1000} ref={stageRef}>
         <Layer>
           <LionImage imageSource ={ears} x={20} y={40} />
           <LionImage imageSource ={body} x={10} y={20} />
