@@ -33,6 +33,33 @@ const items ={
       Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_01.png").default,
       none:""
       
+    },
+    beard:{
+      regularMustache:{
+        black:require("./low/beard/FC01_Black_Skin01.png").default,
+        blonde:require("./low/beard/FC01_Blonde_Skin01.png").default,
+        brown:require("./low/beard/FC01_Brown_Skin01.png").default,
+      },
+      curlyMustache:{
+        black:require("./low/beard/FC02_Black_Skin01.png").default,
+        blonde:require("./low/beard/FC02_Blonde_Skin01.png").default,
+        brown:require("./low/beard/FC02_Brown_Skin01.png").default,
+      },
+      fullBeard:{
+        black:require("./low/beard/FC03_Black_Skin01.png").default,
+        blonde:require("./low/beard/FC03_Blonde_Skin01.png").default,
+        brown:require("./low/beard/FC03_Brown_Skin01.png").default,
+      },     
+      shortBeard:{
+        black:require("./low/beard/FC04_Black_Skin01.png").default,
+        blonde:require("./low/beard/FC04_Blonde_Skin01.png").default,
+        brown:require("./low/beard/FC04_Brown_Skin01.png").default,
+      },    
+      Goatee:{
+        black:require("./low/beard/FC05_Black_Skin01.png").default,
+        blonde:require("./low/beard/FC05_Blonde_Skin01.png").default,
+        brown:require("./low/beard/FC05_Brown_Skin01.png").default,
+      }
     }
 
     // beard:{
@@ -149,9 +176,10 @@ const App = () => {
 const [skin,setSkin] = useState(items.skin1)
 const [_glasses,setGlasses] = useState(skin.glasses.Regular)
 const [_hat,sethat] = useState(skin.hat.propeller)
+const [_beard,setbeard] = useState(skin.beard.fullBeard.brown)
 const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
 // const [_,set] = useState(skin.glasses.Regular)
-const {ears,body,eye,eyeBrow,mouth,nose,glasses,hat} =skin
+const {ears,body,eye,eyeBrow,mouth,nose,glasses,hat,beard} =skin
 const {clothes,harHat}=undependentItems
 
    const handleExport = () => {
@@ -176,6 +204,10 @@ const {clothes,harHat}=undependentItems
   function changeHat(hat){
     sethat(hat)
   }
+  function changeBeard(breard,isColor){
+    setbeard(breard.black)
+  }
+
   console.log("gogogogo",_clothes)
 
     return (
@@ -184,6 +216,7 @@ const {clothes,harHat}=undependentItems
         glasses={glasses} changeSkin={changeSkin} skins={items} 
         clothes={clothes} changeCloth={changeCloth}
       hats={hat} changeHat={changeHat}
+      beard={beard} changeBeard={changeBeard}
         /> 
        
       <Stage width={1000} height={1000} ref={stageRef}>
@@ -193,14 +226,16 @@ const {clothes,harHat}=undependentItems
 
           <LionImage imageSource ={ears}  />
         <LionImage imageSource ={harHat.black} y={-20} />
-          <LionImage imageSource ={body} x={10} y={20} />
+          <LionImage imageSource ={body}  />
           <LionImage imageSource ={eye}  />
           <LionImage imageSource ={eyeBrow}  />
           <LionImage imageSource ={mouth}  />
           <LionImage imageSource ={_glasses}  />
           <LionImage imageSource ={_hat}  />
-          <LionImage imageSource ={nose}  />
           <LionImage imageSource ={_clothes}  />
+          <LionImage imageSource ={_beard}  />
+          <LionImage imageSource ={nose}  />
+
           
           
         </Layer>

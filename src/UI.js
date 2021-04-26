@@ -13,7 +13,9 @@ const hairColors={
 }
 
 function UI({handleExport,glasses,changeGlasses,
-  changeSkin ,skins,clothes, changeCloth,hats,changeHat}) {
+  changeSkin ,skins,clothes, changeCloth,hats,changeHat,
+  beard , changeBeard
+}) {
 
   return (
       <React.Fragment>
@@ -22,6 +24,7 @@ function UI({handleExport,glasses,changeGlasses,
              <AvatarChange title="Glasses" items={glasses} changeItem={changeGlasses}/>
              <AvatarChange title="Clothes" items={clothes} changeItem={changeCloth}/>
              <AvatarChange title="Hats" items={hats} changeItem={changeHat}/>
+             <AvatarChange title="Beard" items={beard} changeItem={changeBeard}/>
         </div>
          <div className="r-panel panel">
            {/* <AvatarChangeColor title="Face Color"   colors={faceColors}/> */}
