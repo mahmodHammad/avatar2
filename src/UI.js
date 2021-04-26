@@ -12,13 +12,16 @@ const hairColors={
   cyan:0x3264c8
 }
 
-function UI({handleExport,glasses,changeGlasses,changeSkin ,skins}) {
+function UI({handleExport,glasses,changeGlasses,
+  changeSkin ,skins,clothes, changeCloth,hats,changeHat}) {
 
   return (
       <React.Fragment>
         <div className="l-panel panel">
              <AvatarChange title="Skintone" items={skins} changeItem={changeSkin}/>
              <AvatarChange title="Glasses" items={glasses} changeItem={changeGlasses}/>
+             <AvatarChange title="Clothes" items={clothes} changeItem={changeCloth}/>
+             <AvatarChange title="Hats" items={hats} changeItem={changeHat}/>
         </div>
          <div className="r-panel panel">
            {/* <AvatarChangeColor title="Face Color"   colors={faceColors}/> */}
@@ -33,7 +36,3 @@ function UI({handleExport,glasses,changeGlasses,changeSkin ,skins}) {
 }
 
 export default UI;
-
-
-
-

@@ -22,7 +22,28 @@ const items ={
       Round: require("./low/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_01.png").default,
       patch:require("./low/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
       threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
+    },
+    hat:{
+      propeller:require("./low/HAT/HAT_01 (Propeller hat)/HAT_01_Skin_01.png").default,
+      Trucker:require("./low/HAT/HAT_02 (Trucker hat)/HAT_02_Skin_01.png").default,
+      baseball:require("./low/HAT/HAT_03 (Baseball cap)/HAT_03_Skin_01.png").default,
+      Beanie:require("./low/HAT/HAT_04 (Beanie)/HAT_04_Skin_01.png").default,
+      Bandana:require("./low/HAT/HAT_05 (Bandana)/HAT_05_Skin_01.png").default,
+      Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_01.png").default,
     }
+
+    // beard:{
+    //   ReqularMustache:{
+    //     black:require("./low/FACIAL HAIR/FC_01 (Regular Mustache)/FC_01_Black/FC01_Black_Skin01.png").default,
+    //     blonde:require("./low/FACIAL HAIR/FC_01 (Regular Mustache)/FC_01_Blonde/FC01_Blonde_Skin01.png").default,
+    //     brown:require("./low/FACIAL HAIR/FC_01 (Regular Mustache)/FC_01_Brown/FC01_Brown_Skin01.png").default,
+    //   },
+    //   Fullbeard:{
+    //     black:require("./low/FACIAL HAIR/FC_01 (Full beard)/FC_01_Black/FC01_Black_Skin01.png").default,
+    //     blonde:require("./low/FACIAL HAIR/FC_01 (Full beard)/FC_01_Blonde/FC01_Blonde_Skin01.png").default,
+    //     brown:require("./low/FACIAL HAIR/FC_01 (Full beard)/FC_01_Brown/FC01_Brown_Skin01.png").default,
+    //   },
+    // }
   },
   skin2:{
     body:require("./low/BODY/Skin_02.png").default,
@@ -39,7 +60,15 @@ const items ={
       Round: require("./low/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_02.png").default,
       patch:require("./low/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_02.png").default,
       threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_02.png").default
+    }, hat:{
+      propeller:require("./low/HAT/HAT_01 (Propeller hat)/HAT_01_Skin_02.png").default,
+      Trucker:require("./low/HAT/HAT_02 (Trucker hat)/HAT_02_Skin_02.png").default,
+      baseball:require("./low/HAT/HAT_03 (Baseball cap)/HAT_03_Skin_02.png").default,
+      Beanie:require("./low/HAT/HAT_04 (Beanie)/HAT_04_Skin_02.png").default,
+      Bandana:require("./low/HAT/HAT_05 (Bandana)/HAT_05_Skin_02.png").default,
+      Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_02.png").default,
     }
+
   },
   skin3:{
     body:require("./Avatar/BODY/Skin_03.png").default,
@@ -56,28 +85,43 @@ const items ={
       Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_03.png").default,
       patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_03.png").default,
       threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_03.png").default
+    },hat:{
+      propeller:require("./low/HAT/HAT_01 (Propeller hat)/HAT_01_Skin_03.png").default,
+      Trucker:require("./low/HAT/HAT_02 (Trucker hat)/HAT_02_Skin_03.png").default,
+      baseball:require("./low/HAT/HAT_03 (Baseball cap)/HAT_03_Skin_03.png").default,
+      Beanie:require("./low/HAT/HAT_04 (Beanie)/HAT_04_Skin_03.png").default,
+      Bandana:require("./low/HAT/HAT_05 (Bandana)/HAT_05_Skin_03.png").default,
+      Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_03.png").default,
     }
+
   },
 }
-
-/*
-
-the name of each item is the same in all skin colors
-TODO:
-  make a state with the each item (eye, galsses...)
-  the state will hole name, uri
-  to change the item:
-    1.get array of the keys
-    2.look for the index of the current key
-    3.get the next/previous index
-    4.get the corrosponding item
-    5.setState that item
-
-*/
+const undependentItems={
+  clothes:{
+    cloth1:require("./low/CLOTHES/Clothes_01.png").default,
+    cloth2:require("./low/CLOTHES/Clothes_02.png").default,
+    cloth3:require("./low/CLOTHES/Clothes_03.png").default,
+    cloth4:require("./low/CLOTHES/Clothes_04.png").default,
+    cloth5:require("./low/CLOTHES/Clothes_05a.png").default,
+    cloth6:require("./low/CLOTHES/Clothes_05b.png").default,
+    cloth7:require("./low/CLOTHES/Clothes_05c.png").default,
+    cloth8:require("./low/CLOTHES/Clothes_05d.png").default,
+    cloth9:require("./low/CLOTHES/Clothes_06a.png").default,
+    cloth10:require("./low/CLOTHES/Clothes_06b.png").default,
+    cloth11:require("./low/CLOTHES/Clothes_07.png").default,
+    cloth12:require("./low/CLOTHES/Clothes_08.png").default,
+    cloth13:require("./low/CLOTHES/Clothes_08a.png").default,
+    cloth14:require("./low/CLOTHES/Clothes_08b.png").default,
+    cloth15:require("./low/CLOTHES/Clothes_08c.png").default,
+  },
+  harHat:{
+    black:require("./low/HAIR (men)/HAIR_00 (Hair for Hat)/HairHat_Black.png").default
+  }
+}
 
 const LionImage = ({x,y,imageSource}) => {
   const [image] = useImage(imageSource);
-  return <Image  image={image}  />;
+  return <Image  image={image} y={y}  />;
 };
 
 // custom component that will handle loading image from url
@@ -100,9 +144,11 @@ const App = () => {
   const stageRef = React.useRef(null);
 const [skin,setSkin] = useState(items.skin1)
 const [_glasses,setGlasses] = useState(skin.glasses.Regular)
-const {ears,body,eye,eyeBrow,mouth,nose,glasses} =skin
-
-console.log("hey ",items.skin1)
+const [_hat,sethat] = useState(skin.hat.propeller)
+const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
+// const [_,set] = useState(skin.glasses.Regular)
+const {ears,body,eye,eyeBrow,mouth,nose,glasses,hat} =skin
+const {clothes,harHat}=undependentItems
 
    const handleExport = () => {
     const uri = stageRef.current.toDataURL();
@@ -120,20 +166,38 @@ console.log("hey ",items.skin1)
   function changeGlasses(glass){
     setGlasses(glass)
   }
+  function changeCloth(cloth){
+    setclothes(cloth)
+  }
+  function changeHat(hat){
+    sethat(hat)
+  }
+  console.log("gogogogo",_clothes)
 
     return (
       <div>
         <UI handleExport={handleExport} changeGlasses={changeGlasses} 
-        glasses={glasses} changeSkin={changeSkin} skins={items}/> 
+        glasses={glasses} changeSkin={changeSkin} skins={items} 
+        clothes={clothes} changeCloth={changeCloth}
+      hats={hat} changeHat={changeHat}
+        /> 
+       
       <Stage width={1000} height={1000} ref={stageRef}>
         <Layer>
-          <LionImage imageSource ={ears} x={20} y={40} />
+        <LionImage imageSource ={_clothes}  />
+        {/* <LionImage imageSource ={harHat.black} x={20} y={40} /> */}
+
+          <LionImage imageSource ={ears}  />
+        <LionImage imageSource ={harHat.black} y={-20} />
           <LionImage imageSource ={body} x={10} y={20} />
-          <LionImage imageSource ={eye} x={20} y={40} />
-          <LionImage imageSource ={eyeBrow} x={20} y={40} />
-          <LionImage imageSource ={mouth} x={20} y={40} />
-          <LionImage imageSource ={_glasses} x={20} y={40} />
-          <LionImage imageSource ={nose} x={20} y={40} />
+          <LionImage imageSource ={eye}  />
+          <LionImage imageSource ={eyeBrow}  />
+          <LionImage imageSource ={mouth}  />
+          <LionImage imageSource ={_glasses}  />
+          <LionImage imageSource ={_hat}  />
+          <LionImage imageSource ={nose}  />
+          <LionImage imageSource ={_clothes}  />
+          
           
         </Layer>
       </Stage>
