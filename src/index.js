@@ -21,7 +21,8 @@ const items ={
       JOY:require("./low/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_01.png").default,
       Round: require("./low/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_01.png").default,
       patch:require("./low/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_01.png").default,
-      threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default
+      threeD:require("./low/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_01.png").default,
+      none:""
     },
     hat:{
       propeller:require("./low/HAT/HAT_01 (Propeller hat)/HAT_01_Skin_01.png").default,
@@ -30,6 +31,8 @@ const items ={
       Beanie:require("./low/HAT/HAT_04 (Beanie)/HAT_04_Skin_01.png").default,
       Bandana:require("./low/HAT/HAT_05 (Bandana)/HAT_05_Skin_01.png").default,
       Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_01.png").default,
+      none:""
+      
     }
 
     // beard:{
@@ -84,7 +87,8 @@ const items ={
       JOY:require("./Avatar/GLASSES/GLASSES_02 (JOY glasses)/GLASSES_02_Skin_03.png").default,
       Round: require("./Avatar/GLASSES/GLASSES_05 (Round metal frame glasses)/GLASSES_05_Skin_03.png").default,
       patch:require("./Avatar/GLASSES/GLASSES_06 (Eye patch)/GLASSES_06_Skin_03.png").default,
-      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_03.png").default
+      threeD:require("./Avatar/GLASSES/GLASSES_07 (3D glasses)/GLASSES_07_Skin_03.png").default,
+      none:""
     },hat:{
       propeller:require("./low/HAT/HAT_01 (Propeller hat)/HAT_01_Skin_03.png").default,
       Trucker:require("./low/HAT/HAT_02 (Trucker hat)/HAT_02_Skin_03.png").default,
