@@ -2,7 +2,6 @@
 export default {
     skin1:{
       body:require("./low/BODY/Skin_01.png").default,
-      eye:require( "./low/EYES/EYES_01 (Regular oval)/EYES_01_Skin_01.png").default,
       ears:require( "./low/EARS/EARS_01 (Regular)/Ears01_Skin01.png").default,
       mouth:require( "./low/MOUTH/MOUTH_02 (Open smile)/Mouth02_Skin01.png").default,
       nose:require( "./low/NOSE/NOSE_01 (Circular big)/NOSE_01_Skin_01.png").default,
@@ -51,6 +50,11 @@ export default {
           black:require("./all/beard/FC05_Black_Skin01.png").default,
           blonde:require("./all/beard/FC05_Blonde_Skin01.png").default,
           brown:require("./all/beard/FC05_Brown_Skin01.png").default,
+        },
+        none:{
+            black:require("./"),
+            blonde:require("./"),
+            brown:require("./"),
         }
       },
       eyebrow:{
@@ -58,6 +62,11 @@ export default {
         flat:require("./all/eyebrows/EYEBROWS_02_Skin_01.png").default,
         thickCurved:require("./all/eyebrows/EYEBROWS_03_Skin_01.png").default,
         ThinCurved:require("./all/eyebrows/EYEBROWS_04_Skin_01.png").default,
+      },
+      eye:{
+          oval:require("./all/eyes/EYES_01_Skin_01.png").default,
+          circular:require("./all/eyes/EYES_02_Skin_01.png").default,
+          "closed Curved":require("./all/eyes/EYES_03_Skin_01.png").default,
       }
     },
     // skin2:{

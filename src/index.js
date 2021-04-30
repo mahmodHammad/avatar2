@@ -34,24 +34,19 @@ const LionImage = ({x,y,imageSource}) => {
   return <Image  image={image} y={y}  />;
 };
 
-// custom component that will handle loading image from url
-// you may add more logic here to handle "loading" state
-// or if loading is failed
-// VERY IMPORTANT NOTES:
-// at first we will set image state to null
-// and then we will set it to native image instance when it is loaded
-
 const App = () => {
-  const stageRef = React.useRef(null);
+const stageRef = React.useRef(null);
 const [skin,setSkin] = useState(items.skin1)
-const [_glasses,setGlasses] = useState(skin.glasses.Regular)
-const [_eyebrow,seteyebrow] = useState(skin.eyebrow.slanted)
 
-const [_hat,sethat] = useState(skin.hat.propeller)
-const [_beard,setbeard] = useState(skin.beard.fullBeard.brown)
-const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
-// const [_,set] = useState(skin.glasses.Regular)
 const {ears,body,eye,mouth,nose,glasses,hat,beard,eyebrow} =skin
+
+const [_glasses,setGlasses] = useState(glasses.Regular)
+const [_eyebrow,seteyebrow] = useState(eyebrow.slanted)
+const [_hat,sethat] = useState(hat.propeller)
+const [_beard,setbeard] = useState(beard.fullBeard.brown)
+const [_eye,seteye] = useState(eye.oval)
+const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
+
 const {clothes,harHat}=undependentItems
 
 
@@ -74,13 +69,17 @@ const {clothes,harHat}=undependentItems
 function changeeyebrow(eyebrow){
   seteyebrow(eyebrow)
 }
+function changeeye(e){
+  seteye(e)
+}
  
 const controllers=[
   ["glasses",glasses,changeGlasses],
   ["clothes",clothes,changeCloth],
   ["hat",hat,changeHat],
   ["beard",beard,changeBeard],
-  ["eyebrow",eyebrow,changeeyebrow]
+  ["eyebrow",eyebrow,changeeyebrow],
+  ["eye",eye,changeeye]
 ]
 
     return (
@@ -95,7 +94,7 @@ const controllers=[
           <LionImage imageSource ={ears}  />
         <LionImage imageSource ={harHat.black} y={-20} />
           <LionImage imageSource ={body}  />
-          <LionImage imageSource ={eye}  />
+          <LionImage imageSource ={_eye}  />
           <LionImage imageSource ={_eyebrow}  />
           <LionImage imageSource ={mouth}  />
           <LionImage imageSource ={_glasses}  />
@@ -104,8 +103,6 @@ const controllers=[
           <LionImage imageSource ={_beard}  />
           <LionImage imageSource ={nose}  />
 
-          
-          
         </Layer>
       </Stage>
       </div>
