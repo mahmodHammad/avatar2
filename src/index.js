@@ -39,11 +39,16 @@ const stageRef = React.useRef(null);
 const [skin,setSkin] = useState(items.skin1)
 
 const {ears,body,eye,mouth,nose,glasses,hat,beard,eyebrow} =skin
-
+const beardColors = {
+  black:"black",
+  blonde:"blonde",
+  brown:"brown",
+}
 const [_glasses,setGlasses] = useState(glasses.Regular)
 const [_eyebrow,seteyebrow] = useState(eyebrow.slanted)
 const [_hat,sethat] = useState(hat.propeller)
-const [_beard,setbeard] = useState(beard.fullBeard.brown)
+const [beardColor,setBeardColor]=useState(beardColors.black)
+const [_beard,setbeard] = useState(beard.regularMustache)
 const [_eye,seteye] = useState(eye.oval)
 const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
 
@@ -64,7 +69,7 @@ const {clothes,harHat}=undependentItems
     sethat(hat)
   }
   function changeBeard(breard,isColor){
-    setbeard(breard.black)
+    setbeard(breard)
   }
 function changeeyebrow(eyebrow){
   seteyebrow(eyebrow)
@@ -72,12 +77,19 @@ function changeeyebrow(eyebrow){
 function changeeye(e){
   seteye(e)
 }
- 
+function changebeardColor(col){
+  // const oldBeard = _beard
+  // console.log("nonono",oldBeard)
+  // setbeard(oldBeard[col])
+setBeardColor(col)
+}
+
 const controllers=[
   ["glasses",glasses,changeGlasses],
   ["clothes",clothes,changeCloth],
   ["hat",hat,changeHat],
   ["beard",beard,changeBeard],
+  ["beard Color",beardColors,changebeardColor],
   ["eyebrow",eyebrow,changeeyebrow],
   ["eye",eye,changeeye]
 ]
@@ -100,7 +112,7 @@ const controllers=[
           <LionImage imageSource ={_glasses}  />
           <LionImage imageSource ={_hat}  />
           <LionImage imageSource ={_clothes}  />
-          <LionImage imageSource ={_beard}  />
+          <LionImage imageSource ={_beard[beardColor]}  />
           <LionImage imageSource ={nose}  />
 
         </Layer>
