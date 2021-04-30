@@ -38,7 +38,7 @@ const App = () => {
 const stageRef = React.useRef(null);
 const [skin,setSkin] = useState(items.skin1)
 
-const {ears,body,eye,mouth,nose,glasses,hat,beard,eyebrow} =skin
+const {ears,body,eye,mouth,nose,glasses,hat,beard,eyebrow,hair} =skin
 const beardColors = {
   black:"black",
   blonde:"blonde",
@@ -51,7 +51,7 @@ const [beardColor,setBeardColor]=useState(beardColors.black)
 const [_beard,setbeard] = useState(beard.regularMustache)
 const [_eye,seteye] = useState(eye.oval)
 const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
-
+const [_hair,sethair]=useState(hair['Buzz cut'])
 const {clothes,harHat}=undependentItems
 
 
@@ -77,6 +77,7 @@ function changeeyebrow(eyebrow){
 function changeeye(e){
   seteye(e)
 }
+
 function changebeardColor(col){
   // const oldBeard = _beard
   // console.log("nonono",oldBeard)
@@ -91,7 +92,8 @@ const controllers=[
   ["beard",beard,changeBeard],
   ["beard Color",beardColors,changebeardColor],
   ["eyebrow",eyebrow,changeeyebrow],
-  ["eye",eye,changeeye]
+  ["eye",eye,changeeye],
+  ["hair",hair,sethair]
 ]
 
     return (
@@ -105,7 +107,9 @@ const controllers=[
         <LionImage imageSource ={_clothes}  />
           <LionImage imageSource ={mouth}  />
           <LionImage imageSource ={_beard[beardColor]}  />
-          <LionImage imageSource ={_hat}  />
+          {/* <LionImage imageSource ={_hat}  /> */}
+          <LionImage imageSource ={_hair[beardColor]}  />
+          
           <LionImage imageSource ={_eye}  />
           <LionImage imageSource ={_eyebrow}  />
           <LionImage imageSource ={_glasses}  />

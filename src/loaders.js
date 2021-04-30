@@ -23,7 +23,42 @@ export default {
         Bandana:require("./low/HAT/HAT_05 (Bandana)/HAT_05_Skin_01.png").default,
         Turban:require("./low/HAT/HAT_06 (Turban)/HAT_06_Skin_01.png").default,
         none:""
-        
+      },
+      hair:{
+        "short messy":{
+            black:require("./all/hair/Hair01_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair01_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair01_Brown_Skin01.png").default,
+        },
+        "Buzz cut":{
+            black:require("./all/hair/Hair02_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair02_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair02_Brown_Skin01.png").default,
+        },"Shaved with stubble":{
+            black:require("./all/hair/Hair03_Black_ALL Skin.png").default,
+            blonde:require("./all/hair/Hair03_Blonde_ALL Skin.png").default,
+            brown:require("./all/hair/Hair03_Brown_ALL Skin.png").default,
+        },"Side part":{
+            black:require("./all/hair/Hair04_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair04_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair04_Brown_Skin01.png").default,
+        },"bowl":{
+            black:require("./all/hair/Hair05_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair05_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair05_Brown_Skin01.png").default,
+        },"long":{
+            black:require("./all/hair/Hair06_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair06_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair06_Brown_Skin01.png").default,
+        },"afro":{
+            black:require("./all/hair/Hair07_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair07_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair07_Brown_Skin01.png").default,
+        },"short curly":{
+            black:require("./all/hair/Hair08_Black_Skin01.png").default,
+            blonde:require("./all/hair/Hair08_Blonde_Skin01.png").default,
+            brown:require("./all/hair/Hair08_Brown_Skin01.png").default,
+        },
       },
       beard:{
         regularMustache:{
