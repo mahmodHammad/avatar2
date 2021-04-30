@@ -1,41 +1,29 @@
 import React ,{useState}from "react";
 import AvatarChange from "./AvatarChange"
 
-const hairColors={
-  lol:0x3D5AFE,
-  red:0xff5050,
-  Purple:0x651FFF,
-  gray:0x282828,
-  lol:0xdc95dc,
-  "light blue":0xb4cdff,
-  pink:0xfe5caa,
-  cyan:0x3264c8
+function downloadURI(uri, name) {
+  var link = document.createElement('a');
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
-function UI({handleExport,controllers}) {
-
+function UI({controllers,stageRef}) {
+  const handleExport = () => {
+    const uri = stageRef.current.toDataURL();
+    downloadURI(uri, 'stage.png');
+  };
   return (
       <React.Fragment>
         <div className="l-panel panel">
-          {controllers.map(ctrl=><React.Fragment>
-            {console.log("FJFJF",ctrl[0])}
-            {console.log("aaaFJFJF",ctrl[1])}
-            <AvatarChange title="Skintone" items={ctrl[0]} changeItem={ctrl[1]}/>
-          </React.Fragment>)}
-             {/* <AvatarChange title="Skintone" items={skins} changeItem={changeSkin}/>
-             <AvatarChange title="Glasses" items={glasses} changeItem={changeGlasses}/>
-             <AvatarChange title="Clothes" items={clothes} changeItem={changeCloth}/>
-             <AvatarChange title="Hats" items={hats} changeItem={changeHat}/>
-             <AvatarChange title="Beard" items={beard} changeItem={changeBeard}/>
-             <AvatarChange title="eyebrow" items={eyebrow} changeItem={changeeyebrow}/> */}
+          {controllers.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
         </div>
-         <div className="r-panel panel">
-           {/* <AvatarChangeColor title="Face Color"   colors={faceColors}/> */}
-
-         <div className="box">
-        <button onClick={handleExport} className="center submit">Submit</button>
-    </div>
-         
+        <div className="r-panel panel">
+          <div className="box">
+            <button onClick={handleExport} className="center submit">Submit</button>
+          </div>
         </div> 
         </React.Fragment>
   );

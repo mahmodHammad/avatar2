@@ -40,15 +40,6 @@ const LionImage = ({x,y,imageSource}) => {
 // VERY IMPORTANT NOTES:
 // at first we will set image state to null
 // and then we will set it to native image instance when it is loaded
-function downloadURI(uri, name) {
-  var link = document.createElement('a');
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
 
 const App = () => {
   const stageRef = React.useRef(null);
@@ -63,15 +54,7 @@ const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
 const {ears,body,eye,mouth,nose,glasses,hat,beard,eyebrow} =skin
 const {clothes,harHat}=undependentItems
 
-   const handleExport = () => {
-    const uri = stageRef.current.toDataURL();
-    console.log(uri);
-    // we also can save uri as file
-    // but in the demo on Konva website it will not work
-    // because of iframe restrictions
-    // but feel free to use it in your apps:
-    downloadURI(uri, 'stage.png');
-  };
+
   
   function changeSkin(skintone){
     setSkin(skintone)
@@ -93,16 +76,16 @@ function changeeyebrow(eyebrow){
 }
  
 const controllers=[
-  [glasses,changeGlasses],
-  [clothes,changeCloth],
-  [hat,changeHat],
-  [beard,changeBeard],
-  [eyebrow,changeeyebrow],
+  ["glasses",glasses,changeGlasses],
+  ["clothes",clothes,changeCloth],
+  ["hat",hat,changeHat],
+  ["beard",beard,changeBeard],
+  ["eyebrow",eyebrow,changeeyebrow]
 ]
 
     return (
       <div>
-        <UI handleExport={handleExport} controllers={controllers} /> 
+        <UI  controllers={controllers} stageRef={stageRef}/> 
        
       <Stage width={1000} height={1000} ref={stageRef}>
         <Layer>
