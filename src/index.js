@@ -108,6 +108,8 @@ const controllers=[
           <LionImage imageSource ={mouth}  />
           <LionImage imageSource ={_beard[beardColor]}  />
           {/* <LionImage imageSource ={_hat}  /> */}
+        {/* <LionImage imageSource ={harHat.black} y={-20} /> */}
+
           <LionImage imageSource ={_hair[beardColor]}  />
           
           <LionImage imageSource ={_eye}  />
@@ -117,7 +119,6 @@ const controllers=[
 
         {/* <LionImage imageSource ={harHat.black} x={20} y={40} /> */}
 
-        <LionImage imageSource ={harHat.black} y={-20} />
           {/* <LionImage imageSource ={_clothes}  /> */}
 
         </Layer>
