@@ -100,20 +100,21 @@ const controllers=[
        
       <Stage width={1000} height={1000} ref={stageRef}>
         <Layer>
-        <LionImage imageSource ={_clothes}  />
-        {/* <LionImage imageSource ={harHat.black} x={20} y={40} /> */}
-
           <LionImage imageSource ={ears}  />
-        <LionImage imageSource ={harHat.black} y={-20} />
           <LionImage imageSource ={body}  />
+        <LionImage imageSource ={_clothes}  />
+          <LionImage imageSource ={mouth}  />
+          <LionImage imageSource ={_beard[beardColor]}  />
+          <LionImage imageSource ={_hat}  />
           <LionImage imageSource ={_eye}  />
           <LionImage imageSource ={_eyebrow}  />
-          <LionImage imageSource ={mouth}  />
           <LionImage imageSource ={_glasses}  />
-          <LionImage imageSource ={_hat}  />
-          <LionImage imageSource ={_clothes}  />
-          <LionImage imageSource ={_beard[beardColor]}  />
           <LionImage imageSource ={nose}  />
+
+        {/* <LionImage imageSource ={harHat.black} x={20} y={40} /> */}
+
+        <LionImage imageSource ={harHat.black} y={-20} />
+          {/* <LionImage imageSource ={_clothes}  /> */}
 
         </Layer>
       </Stage>
@@ -123,7 +124,7 @@ const controllers=[
 
 }
 render(<App />, document.getElementById('root'));
-
+// ears, body, clothing, mouth, nose, facial hair, hat, eyes, eyebrows, glasses
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
