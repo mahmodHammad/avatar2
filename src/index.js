@@ -44,7 +44,42 @@ const beardColors = {
   blonde:"blonde",
   brown:"brown",
 }
-
+const bgs={
+  pinky:[0,"#F7BB97",1,"#DD5E89"],
+  "cool bules":[1,"#2193b0",0,"#6dd5ed"],
+  yoda:[0,"#FF0099",1,"#493240"],
+  amin:[0,"#8E2DE2",1,"#4A00E0"],
+  Harvey:[0,"#99f2c8",1,"#1f4037"],
+  neuromancer:[0,"#f953c6",1,"#b91d73"],
+  flare:[0,"#f5af19",1,"#f12711"],
+  "kye meh":[0,"#8360c3",1,"#2ebf91"],
+  "keyoo tah":[0,"#ffd452",1,"#544a7d"],
+  "by Design":[0,"#009FFF",1,"#ec2F4B"],
+  "UV":[0,"#eaafc8",1,"#654ea3"],
+  "burning organe":[0,"#FF416C",1,"#FF4B2B"],
+  "summer Dog":[0,"#a8ff78",1,"#78ffd6"],
+  "Sin red":[0,"#ED213A",1,"#93291E"],
+  mango:[0,"#ffe259",1,"#ffa751"],
+  reaqua:[0,"#ACBB78",1,"#799F0C"],
+  red:[0,"#f55",1,"#d00"],
+  Lunada:[0,"#5433FF",0.5,"#20BDFF",1,"#A5FECB"],
+  "sea weed":[0,"#3CD3AD",1,"#4CB8C4"],
+  "bloody mary":[0,"#FF512F",1,"#DD2476"],
+  "mango pulp":[0,"#EDDE5D",1,"#F09819"],
+  "emerald water":[0,"#348F50",1,"#56B4D3"],
+  "intuitive purple":[0,"#DA22FF",1,"#9733EE"],
+  "Green beach":[0,"#00CDAC",1,"#02AAB0"],
+  "sunny days":[0,"#E1F5C4",1,"#EDE574"],
+  "harmonic energy":[0,"#F4D03F",1,"#16A085"],
+  "cool brown":[0,"#b29f94",1,"#603813"],
+  nimvelo:[0,"#26a0da",1,"#314755"],
+  dimigo:[0,"#fc6767",1,"#ec008c"],
+  skyline:[0,"#1488CC",1,"#2B32B2"],
+  sky:[0,"#fff",1,"#076585"],
+  copper:[0,"#B79891",1,"#94716B"],
+  rea:[0,"#FFE000",1,"#799F0C"],
+  "slight ocean view":[0,"#a8c0ff",1,"#3f2b96"],
+}
 const [_glasses,setGlasses] = useState(glasses.Regular)
 const [_eyebrow,seteyebrow] = useState(eyebrow.slanted)
 const [_hat,sethat] = useState(hat.propeller)
@@ -53,6 +88,7 @@ const [_beard,setbeard] = useState(beard.regularMustache)
 const [_eye,seteye] = useState(eye.oval)
 const [_clothes,setclothes] = useState(undependentItems.clothes.cloth1)
 const [_hair,sethair]=useState(hair['Buzz cut'])
+const [bg,setbg]=useState(bgs.pinky)
 const {clothes,harHat}=undependentItems
 
 function changeSkin(skintone){
@@ -81,6 +117,11 @@ function changebeardColor(col){
   setBeardColor(col)
 }
 
+function changbg(bg){
+  console.log("HHH",bg)
+  setbg(bg)
+}
+
 const controllers=[
   ["glasses",glasses,changeGlasses],
   ["clothes",clothes,changeCloth],
@@ -89,7 +130,8 @@ const controllers=[
   ["beard Color",beardColors,changebeardColor],
   ["eyebrow",eyebrow,changeeyebrow],
   ["eye",eye,changeeye],
-  ["hair",hair,sethair]
+  ["hair",hair,sethair],
+  ["Background",bgs,changbg],
 ]
 
     return (
@@ -103,11 +145,11 @@ const controllers=[
           y={0}
           width={1000}
           height={1000}
-          fillLinearGradientEndPointX={1000}
-          fillLinearGradientStartPointX={0}
+          fillLinearGradientStartPointX={1000}
           fillLinearGradientStartPointY={0}
+          fillLinearGradientEndPointX={0}
           fillLinearGradientEndPointY={1000}
-          fillLinearGradientColorStops={[0,"#f0f",1,"#ff0"]}
+          fillLinearGradientColorStops={bg}
         />
           <LionImage imageSource ={ears}  />
           <LionImage imageSource ={body}  />
