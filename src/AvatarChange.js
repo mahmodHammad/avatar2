@@ -40,9 +40,9 @@ export default function AC({ title , items,changeItem }) {
     <div className="box">
         <span className="title">{title}</span>
         <div className="change">
-            <button className="l-btn btn" onClick={()=>onBGChange(0)}><ChangeIconLeft color="#fff" width={18} height={18} /></button>
+            <button className="l-btn btn" onClick={()=>onBGChange(0)}><ChangeIconLeft color="#fff" width={16} height={16} /></button>
             <span className="center">{ItemNames[activeItemIndex]}</span>
-            <button className="r-btn btn" onClick={()=>onBGChange(1)}><ChangeIconRight color="#fff" width={18} height={18} /></button>
+            <button className="r-btn btn" onClick={()=>onBGChange(1)}><ChangeIconRight color="#fff" width={16} height={16} /></button>
         </div>
     </div>
   );

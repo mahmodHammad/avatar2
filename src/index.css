@@ -116,13 +116,14 @@ canvas{
   display: inline-block;
   /* width: 60%; */
   float: right;
+  /* border: solid 1px red; */
 }
 
 .center{
   background-color: #fff;
   display: inline-block;
   width: 130px  !important;
-  padding: 11px;
+  padding: 9px;
   margin: 0 10px;
   border-radius: 200px;
   font-size: 15px;
@@ -135,18 +136,21 @@ canvas{
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  /* border: solid 1px rgb(110, 110, 110); */
+  position: relative;
+  top: -5px;
 }
 
 .btn{
   padding-top: 3px;
-  padding-right: 8px;
+  padding-right: 5px;
   background-color: #333;
   color: #fff;
   font-weight: bold;
   /* font-size: 0px; */
   /* padding: 5px; */
-  width: 35px;
-  height: 35px;
+  width: 31px;
+  height: 31px;
   border: none;
   border-radius: 100px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
