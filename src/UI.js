@@ -11,6 +11,9 @@ function downloadURI(uri, name) {
 }
 
 function UI({controllers,stageRef}) {
+  const ctrLenght = controllers.length
+  const leftPanel = controllers.slice(0,1+ctrLenght/2)
+  const rightPanel = controllers.slice(1+ctrLenght/2)
   const handleExport = () => {
     const uri = stageRef.current.toDataURL();
     downloadURI(uri, 'stage.png');
@@ -18,9 +21,11 @@ function UI({controllers,stageRef}) {
   return (
       <React.Fragment>
         <div className="l-panel panel">
-          {controllers.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
+          {leftPanel.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
         </div>
         <div className="r-panel panel">
+        {rightPanel.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
+
           <div className="box">
             <button onClick={handleExport} className="center submit">Submit</button>
           </div>
