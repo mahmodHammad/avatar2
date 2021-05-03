@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import ChangeIconLeft from "./changeIconLeft"
+import ChangeIconRight from "./changeIconRight"
 
 export default function AC({ title , items,changeItem }) {
 
@@ -39,16 +40,10 @@ export default function AC({ title , items,changeItem }) {
     <div className="box">
         <span className="title">{title}</span>
         <div className="change">
-            <button className="l-btn btn" onClick={()=>onBGChange(0)}>{`<`}</button>
+            <button className="l-btn btn" onClick={()=>onBGChange(0)}><ChangeIconLeft color="#fff" width={18} height={18} /></button>
             <span className="center">{ItemNames[activeItemIndex]}</span>
-            <button className="r-btn btn" onClick={()=>onBGChange(1)}>{`>`}</button>
+            <button className="r-btn btn" onClick={()=>onBGChange(1)}><ChangeIconRight color="#fff" width={18} height={18} /></button>
         </div>
     </div>
-    // <div className="container">
-    //   <button onClick={() => onBGChange(0)}>{`<`}</button>
-    //   <span className="title">{ItemNames[activeItemIndex]}</span>
-    //   <button onClick={() => onBGChange(1)}>{`>`}</button>
-      // <button onClick={()=>takeScreenshot(2000 ,2000 )} className="SH">Take SH</button>
-    // </div>
   );
 }

@@ -25,7 +25,6 @@ function UI({controllers,stageRef}) {
         </div>
         <div className="r-panel panel">
         {rightPanel.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
-
           <div className="box">
             <button onClick={handleExport} className="center submit">Submit</button>
           </div>
