@@ -6,6 +6,8 @@ import { Stage, Layer, Image ,Rect} from 'react-konva';
 import useImage from 'use-image';
 import UI from "./UI"
 import items from "./loaders"
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 const undependentItems={
   clothes:{
     cloth1:require("./low/CLOTHES/Clothes_01.png").default,
@@ -135,9 +137,11 @@ const controllers=[
 ]
 
     return (
-      <div>
+      <Grid container spacing={2}>
+      <Grid item xs={12}>
         <UI  controllers={controllers} stageRef={stageRef}/> 
-       
+        {/* <Button variant="contained" color="primary" > Hello world</Button> */}
+       </Grid>
       <Stage width={1000} height={1000} ref={stageRef}>
         <Layer>
         <Rect
@@ -171,7 +175,7 @@ const controllers=[
         
         </Layer>
       </Stage>
-      </div>
+      </Grid>
 
     );
 
