@@ -2,11 +2,9 @@ import reportWebVitals from './reportWebVitals';
 import "./index.css"
 import React, {useState } from 'react';
 import { render } from 'react-dom';
-import { Stage, Layer, Image ,Rect} from 'react-konva';
-import useImage from 'use-image';
 import UI from "./UI"
+import DisplayAvatar from "./DisplayAvatar"
 import items from "./loaders"
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 const undependentItems={
   clothes:{
@@ -30,11 +28,6 @@ const undependentItems={
     black:require("./low/HAIR (men)/HAIR_00 (Hair for Hat)/HairHat_Black.png").default
   }
 }
-
-const LionImage = ({x,y,imageSource}) => {
-  const [image] = useImage(imageSource);
-  return <Image  image={image} y={y}  />;
-};
 
 const App = () => {
 const stageRef = React.useRef(null);
@@ -114,11 +107,9 @@ function changeeyebrow(eyebrow){
 function changeeye(e){
   seteye(e)
 }
-
 function changebeardColor(col){
   setBeardColor(col)
 }
-
 function changbg(bg){
   console.log("HHH",bg)
   setbg(bg)
@@ -135,46 +126,14 @@ const controllers=[
   ["hair",hair,sethair],
   ["Background",bgs,changbg],
 ]
+const imageSources = [ears,body,_clothes,mouth,_hair[beardColor],_beard[beardColor],_eye,_eyebrow,_glasses,nose]
 
     return (
       <Grid container spacing={2}>
       <Grid item xs={12}>
         <UI  controllers={controllers} stageRef={stageRef}/> 
-        {/* <Button variant="contained" color="primary" > Hello world</Button> */}
-       </Grid>
-      <Stage width={1000} height={1000} ref={stageRef}>
-        <Layer>
-        <Rect
-          x={0}
-          y={0}
-          width={1000}
-          height={1000}
-          fillLinearGradientStartPointX={1000}
-          fillLinearGradientStartPointY={0}
-          fillLinearGradientEndPointX={0}
-          fillLinearGradientEndPointY={1000}
-          fillLinearGradientColorStops={bg}
-        />
-          <LionImage imageSource ={ears}  />
-          <LionImage imageSource ={body}  />
-         <LionImage imageSource ={_clothes}  />
-          <LionImage imageSource ={mouth}  />
-          <LionImage imageSource ={_hair[beardColor]}  />
-
-          <LionImage imageSource ={_beard[beardColor]}  />
-          {/* <LionImage imageSource ={_hat}  /> */}
-        {/* <LionImage imageSource ={harHat.black} y={-20} /> */}
-          <LionImage imageSource ={_eye}  />
-          <LionImage imageSource ={_eyebrow}  />
-          <LionImage imageSource ={_glasses}  />
-          <LionImage imageSource ={nose}  />
-
-        {/* <LionImage imageSource ={harHat.black} x={20} y={40} /> */}
-
-          {/* <LionImage imageSource ={_clothes}  /> */}
-        
-        </Layer>
-      </Stage>
+      </Grid>
+      <DisplayAvatar imageSources={imageSources} bg={bg} stageRef={stageRef}/>
       </Grid>
 
     );
@@ -186,3 +145,34 @@ render(<App />, document.getElementById('root'));
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     padding: theme.spacing(2),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   },
+// }));
+
+// export default function App() {
+//   const classes = useStyles();
+
+//   return (
+//     <div className={classes.root}>
+//       <Grid container spacing={3}>
+//         <Grid item xs={12}>
+//           <Paper className={classes.paper}>xs=12</Paper>
+//         </Grid>
+//         <Grid item xs={12} sm={6}>
+//           <Paper className={classes.paper}>xs=12 sm=6</Paper>
+//         </Grid>
+       
+//       </Grid>
+//     </div>
+//   );
+// }
