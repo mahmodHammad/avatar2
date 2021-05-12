@@ -5,6 +5,7 @@ import React, {useState } from 'react';
 import { render } from 'react-dom';
 import Render from "./Render"
 import items from "./loaders"
+
 const undependentItems={
   clothes:{
     cloth1:require("./low/CLOTHES/Clothes_01.png").default,

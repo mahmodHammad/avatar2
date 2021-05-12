@@ -1,6 +1,8 @@
 import React ,{useState}from "react";
 import { Stage, Layer, Image ,Rect} from 'react-konva';
 import useImage from 'use-image';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const ItemImage = ({x,y,imageSource}) => {
     const [image] = useImage(imageSource);
@@ -8,11 +10,19 @@ const ItemImage = ({x,y,imageSource}) => {
 };
 
 function Render({imageSources,bg,stageRef,height}) {
-  
-
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          flexGrow: 1,
+        },
+        canv: {
+          height:height
+        },
+      }));
+      
+    const classes = useStyles();
   return (
-      <div ref={stageRef}>
-    <Stage height={height} width={1000}  >
+      <div  className={classes.canv}  ref={stageRef}>
+    <Stage className={classes.canv} height={1000} width={1000}  >
     <Layer>
     <Rect
       x={0}

@@ -33,7 +33,7 @@ code {
   /* width: 200px !important; */
   /* height: 200px !important; */
   width: 100%  !important;
-  /* height: 33vw !important; */
+  height: 100% !important;
   /* border: solid 1px #888; */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
