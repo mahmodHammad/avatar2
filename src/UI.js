@@ -1,7 +1,9 @@
-import React ,{useState}from "react";
+import React ,{useState,useLayoutEffect}from "react";
 import AvatarChange from "./AvatarChange"
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
+import DisplayAvatar from "./DisplayAvatar"
 
 function downloadURI(uri, name) {
   var link = document.createElement('a');
@@ -12,7 +14,9 @@ function downloadURI(uri, name) {
   document.body.removeChild(link);
 }
 
-function UI({controllers,stageRef}) {
+function UI({controllers,stageRef, imageSources ,bg}) {
+  const [dimensions, setDimensions] = useState({ width:0, height: 0 });
+
   const ctrLenght = controllers.length
   const leftPanel = controllers.slice(0,1+ctrLenght/2)
   const rightPanel = controllers.slice(1+ctrLenght/2)
@@ -20,15 +24,31 @@ function UI({controllers,stageRef}) {
     const uri = stageRef.current.toDataURL();
     downloadURI(uri, 'stage.png');
   };
+
+  useLayoutEffect(() => {
+    if (stageRef.current) {
+      console.log(stageRef.current.offsetWidth)
+      setDimensions({
+        width: stageRef.current.offsetWidth,
+        height: stageRef.current.offsetHeight
+      });
+    }
+  }, []);
+  // window.onresize=e=>console.log("stageRef",stageRef.getBoundingClientRect().width)
+
   return (
-      <React.Fragment>
-        <Grid container>
-        <Grid item  xs={12} sm={6}>
+      <Container>
+        <Grid container className="appContainer">
+        <Grid item  xs={12} sm={4}>
             {leftPanel.map(ctrl=>
             <Grid item xs={12} ><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/></Grid>)}
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
+          <DisplayAvatar height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
         {rightPanel.map(ctrl=> <Grid item xs={12} lg={12}>
           <AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>
           </Grid>
@@ -39,8 +59,10 @@ function UI({controllers,stageRef}) {
         </Grid>
         </Grid>
 
-        </React.Fragment>
+        </Container>
   );
 }
+
+
 
 export default UI;

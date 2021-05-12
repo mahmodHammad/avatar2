@@ -32,8 +32,8 @@ code {
 .konvajs-content{
   /* width: 200px !important; */
   /* height: 200px !important; */
-  width: 33vw !important;
-  height: 33vw !important;
+  width: 100%  !important;
+  /* height: 33vw !important; */
   /* border: solid 1px #888; */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -100,7 +100,7 @@ canvas{
    /* border: solid 1px green; */
   /* background-color: hotpink;  */
   margin: 10px 0;
-  padding:0 40px;
+  /* padding:0 40px; */
 
 }
 
@@ -113,6 +113,11 @@ canvas{
   float: left;
   padding-top: 5px;
   text-transform: capitalize;
+}
+
+.appContainer{
+  background-color: red;
+  min-height: 33vw;
 }
 
 .change{

@@ -7,11 +7,12 @@ const ItemImage = ({x,y,imageSource}) => {
     return <Image  image={image} y={y}  />;
 };
 
-function Render({imageSources,bg,stageRef}) {
+function Render({imageSources,bg,stageRef,height}) {
   
 
   return (
-    <Stage width={1000} height={1000} ref={stageRef}>
+      <div ref={stageRef}>
+    <Stage height={height} width={1000}  >
     <Layer>
     <Rect
       x={0}
@@ -27,6 +28,7 @@ function Render({imageSources,bg,stageRef}) {
     {imageSources.map(img=><ItemImage imageSource ={img}  />)}
     </Layer>
   </Stage>
+  </div>
   );
 }
 
