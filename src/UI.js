@@ -36,21 +36,29 @@ const divRef = React.useRef(null);
       });
     }
   }, []);
-  // window.onresize=e=>console.log("stageRef",stageRef.getBoundingClientRect().width)
+  window.onresize=e=>{
+    if (divRef.current) {
+      console.log(divRef.current.offsetWidth)
+      setDimensions({
+        width: divRef.current.offsetWidth,
+        height: divRef.current.offsetHeight
+      });
+    }
+  }
 
   return (
       <Container>
         <Grid container className="appContainer">
-        <Grid item  xs={12} sm={4}>
+        <Grid item alignContent="center" alignItems="center" justify="center" xs={12} sm={4} lg={4} >
             {leftPanel.map(ctrl=>
             <Grid item xs={12} ><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/></Grid>)}
         </Grid>
 
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4} lg={4}>
           <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
         </Grid>
 
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4} lg={4}>
         {rightPanel.map(ctrl=> <Grid item xs={12} lg={12}>
           <AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>
           </Grid>
