@@ -1,5 +1,7 @@
 import React ,{useState}from "react";
 import AvatarChange from "./AvatarChange"
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 function downloadURI(uri, name) {
   var link = document.createElement('a');
@@ -20,15 +22,23 @@ function UI({controllers,stageRef}) {
   };
   return (
       <React.Fragment>
-        <div className="l-panel panel">
-          {leftPanel.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
-        </div>
-        <div className="r-panel panel">
-        {rightPanel.map(ctrl=><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>)}
+        <Grid container>
+        <Grid item  xs={12} sm={6}>
+            {leftPanel.map(ctrl=>
+            <Grid item xs={12} ><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/></Grid>)}
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+        {rightPanel.map(ctrl=> <Grid item xs={12} lg={12}>
+          <AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/>
+          </Grid>
+          )}
           <div className="box">
             <button onClick={handleExport} className="center submit">Submit</button>
-          </div>
         </div> 
+        </Grid>
+        </Grid>
+
         </React.Fragment>
   );
 }

@@ -15,11 +15,11 @@ body {
   /* overflow: hidden; */
 
 /* background-color: #eee; */
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  align-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* height: 100%; */
+  /* align-items: cen ter; */
+  /* align-content: center; */
 }
 
 
@@ -68,30 +68,34 @@ canvas{
 .panel{
   /* width:30vw; */
   /* height: calc( 25vw); */
-  height: 33vw;
-  width:33vw;
 
-  position: absolute;
-  display: flex;
+  /* position: absolute; */
+  /* display: flex; */
   /* padding: 100px 0; */
-  justify-content: center;
-  align-content: center;
-  flex-flow: column;
+  /* justify-content: center; */
+  /* align-content: center; */
+  /* flex-flow: column; */
+  border: 1px pink solid;
   border-radius: 10px;
   /* border: 1px solid pink; */
 }
 
 .l-panel{
-  left: 0;
+  /* left: 0; */
   /* height: 30vw; */
 }
 .r-panel{
-  right: 0;
+  /* right: 0; */
+}
+.red{
+  background-color: rebeccapurple;
+  width: 100%;
 }
 
 .box{
+  border: 1px solid green;
   text-align: center;
-  width: calc(100% - 80px);
+  /* width: calc(100% - 80px); */
   display: block;
    /* border: solid 1px green; */
   /* background-color: hotpink;  */
@@ -113,9 +117,7 @@ canvas{
 
 .change{
   margin-bottom: 10px;
-  display: inline-block;
   /* width: 60%; */
-  float: right;
   /* border: solid 1px red; */
 }
 

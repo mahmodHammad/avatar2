@@ -7,7 +7,7 @@ const ItemImage = ({x,y,imageSource}) => {
     return <Image  image={image} y={y}  />;
 };
 
-function DisplayAvatar({imageSources,bg,stageRef}) {
+function Render({imageSources,bg,stageRef}) {
   
 
   return (
@@ -30,4 +30,4 @@ function DisplayAvatar({imageSources,bg,stageRef}) {
   );
 }
 
-export default DisplayAvatar;
+export default Render;

@@ -1,11 +1,10 @@
 import reportWebVitals from './reportWebVitals';
 import "./index.css"
+
 import React, {useState } from 'react';
 import { render } from 'react-dom';
-import UI from "./UI"
-import DisplayAvatar from "./DisplayAvatar"
+import Render from "./Render"
 import items from "./loaders"
-import Grid from '@material-ui/core/Grid';
 const undependentItems={
   clothes:{
     cloth1:require("./low/CLOTHES/Clothes_01.png").default,
@@ -129,12 +128,7 @@ const controllers=[
 const imageSources = [ears,body,_clothes,mouth,_hair[beardColor],_beard[beardColor],_eye,_eyebrow,_glasses,nose]
 
     return (
-      <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <UI  controllers={controllers} stageRef={stageRef}/> 
-      </Grid>
-      <DisplayAvatar imageSources={imageSources} bg={bg} stageRef={stageRef}/>
-      </Grid>
+     <Render imageSources={imageSources} bg={bg} stageRef={stageRef} controllers={controllers}/>
 
     );
 
@@ -145,34 +139,3 @@ render(<App />, document.getElementById('root'));
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     padding: theme.spacing(2),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-//   },
-// }));
-
-// export default function App() {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.root}>
-//       <Grid container spacing={3}>
-//         <Grid item xs={12}>
-//           <Paper className={classes.paper}>xs=12</Paper>
-//         </Grid>
-//         <Grid item xs={12} sm={6}>
-//           <Paper className={classes.paper}>xs=12 sm=6</Paper>
-//         </Grid>
-       
-//       </Grid>
-//     </div>
-//   );
-// }
