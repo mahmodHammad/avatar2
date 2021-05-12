@@ -113,10 +113,11 @@ canvas{
   float: left;
   padding-top: 5px;
   text-transform: capitalize;
+  width: 28%;
+  padding:10px;
 }
 
 .appContainer{
-  background-color: red;
   min-height: 33vw;
 }
 
