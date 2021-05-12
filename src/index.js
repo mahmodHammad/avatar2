@@ -3,7 +3,7 @@ import "./index.css"
 
 import React, {useState } from 'react';
 import { render } from 'react-dom';
-import Render from "./Render"
+import Render from "./render"
 import items from "./loaders"
 
 const undependentItems={
