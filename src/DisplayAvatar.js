@@ -9,7 +9,7 @@ const ItemImage = ({x,y,imageSource}) => {
     return <Image  image={image} y={y}  />;
 };
 
-function Render({imageSources,bg,stageRef,height}) {
+function Render({imageSources,bg,stageRef,height,divRef}) {
     const useStyles = makeStyles((theme) => ({
         root: {
           flexGrow: 1,
@@ -21,8 +21,8 @@ function Render({imageSources,bg,stageRef,height}) {
       
     const classes = useStyles();
   return (
-      <div  className={classes.canv}  ref={stageRef}>
-    <Stage className={classes.canv} height={1000} width={1000}  >
+      <div  className={classes.canv} ref={divRef} >
+    <Stage className={classes.canv}  ref={stageRef} height={1000} width={1000}  >
     <Layer>
     <Rect
       x={0}

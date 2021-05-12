@@ -15,6 +15,8 @@ function downloadURI(uri, name) {
 }
 
 function UI({controllers,stageRef, imageSources ,bg}) {
+const divRef = React.useRef(null);
+
   const [dimensions, setDimensions] = useState({ width:0, height: 0 });
 
   const ctrLenght = controllers.length
@@ -26,11 +28,11 @@ function UI({controllers,stageRef, imageSources ,bg}) {
   };
 
   useLayoutEffect(() => {
-    if (stageRef.current) {
-      console.log(stageRef.current.offsetWidth)
+    if (divRef.current) {
+      console.log(divRef.current.offsetWidth)
       setDimensions({
-        width: stageRef.current.offsetWidth,
-        height: stageRef.current.offsetHeight
+        width: divRef.current.offsetWidth,
+        height: divRef.current.offsetHeight
       });
     }
   }, []);
@@ -45,7 +47,7 @@ function UI({controllers,stageRef, imageSources ,bg}) {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          <DisplayAvatar height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
+          <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
         </Grid>
 
         <Grid item xs={12} sm={4}>
