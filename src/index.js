@@ -116,6 +116,7 @@ function changbg(bg){
 }
 
 const controllers=[
+  ["Skintone",glasses,changeGlasses],
   ["glasses",glasses,changeGlasses],
   ["clothes",clothes,changeCloth],
   ["hat",hat,changeHat],
@@ -125,12 +126,13 @@ const controllers=[
   ["eye",eye,changeeye],
   ["hair",hair,sethair],
   ["Background",bgs,changbg],
+  ["Special",bgs,changbg],
+  // ["Special",bgs,changbg],
 ]
 const imageSources = [ears,body,_clothes,mouth,_hair[beardColor],_beard[beardColor],_eye,_eyebrow,_glasses,nose]
 
     return (
      <Render imageSources={imageSources} bg={bg} stageRef={stageRef} controllers={controllers}/>
-
     );
 
 }

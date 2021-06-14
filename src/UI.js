@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import DisplayAvatar from "./DisplayAvatar"
+import Navbar from "./UI/Navbar"
+import Typography from '@material-ui/core/Typography';
 
 function downloadURI(uri, name) {
   var link = document.createElement('a');
@@ -47,15 +49,23 @@ const divRef = React.useRef(null);
   }
 
   return (
+    <div>
+      <Navbar/>
       <Container>
+           
+      <Typography align="center" className="SolganTitle" variant="h5" >
+            Create Your Normie
+          </Typography>
         <Grid container className="appContainer">
         <Grid item alignContent="center" alignItems="center" justify="center" xs={12} sm={4} lg={4} >
             {leftPanel.map(ctrl=>
             <Grid item xs={12} ><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/></Grid>)}
         </Grid>
 
-        <Grid item xs={12} sm={4} lg={4}>
-          <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
+        <Grid justify="center" container item xs={12} sm={3} lg={4}>
+          <Grid item xs={10} >
+            <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
+          </Grid>
         </Grid>
 
         <Grid item xs={12} sm={4} lg={4}>
@@ -64,15 +74,19 @@ const divRef = React.useRef(null);
           </Grid>
           )}
           <div className="box">
-            <button onClick={handleExport} className="center submit">Submit</button>
+           1000/1000 Minted <button onClick={handleExport} className="radbtn submit">Submit</button>
         </div> 
         </Grid>
         </Grid>
 
+          
+        <Typography  align="center"  className="txt1" variant="body2" noWrap>
+        The following items can be claimed if you own the original NFT in your connected wallet:
+          </Typography>
+
         </Container>
+      </div>
   );
 }
-
-
 
 export default UI;

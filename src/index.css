@@ -8,10 +8,11 @@ html {
   height: 100%;
 }
 body {
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
   height: 100%;
   font-family:'AnonymousPro','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-  margin-top: 0;
+  /* margin-top: 0; */
+  margin: 0;
   /* overflow: hidden; */
 
 /* background-color: #eee; */
@@ -117,10 +118,10 @@ canvas{
 }
 
 .appContainer{
-  /* background-color: burlywood; */
-  height: 100vh;
+/* background-color: burlywood; */
+/* height: 100vh; */
   align-items: center;
-  min-height: 33vw;
+  /* min-height: 33vw; */
 }
 
 .change{
@@ -133,22 +134,22 @@ canvas{
   background-color: #fff;
   display: inline-block;
   width: 130px  !important;
-  padding: 9px;
+  padding: 7px 9px;
   margin: 0 10px;
   border-radius: 200px;
   font-size: 15px;
-  width: 140px;
+  width: 140px !important;
   text-transform: capitalize;
   letter-spacing: 1px;
   font-weight: 500;
   color: #000;
   background-color: #fff;
-  border: none;
+  border: 2px solid #222;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
   /* border: solid 1px rgb(110, 110, 110); */
   position: relative;
-  top: -5px;
+  top: -3px;
 }
 
 .btn{
@@ -159,24 +160,29 @@ canvas{
   font-weight: bold;
   /* font-size: 0px; */
   /* padding: 5px; */
-  width: 31px;
-  height: 31px;
+  width: 33px;
+  height: 33px;
   border: none;
   border-radius: 100px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .submit{
-  border: none;
-  width: 120px  !important;
   background-color: #02f7b5;
-  font-weight: bold;
-
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
+  width: 120px  !important;
 }
+
+.navBtns{
+  background:#1AC8FF  !important;
+  /* linear-gradient(122.72deg, #000AFF -32.6%, #1AC8FF 111.97%) */
+}
+
+.wallet{
+  background: darkorange;
+  width: 155px  !important;
+  
+}
+
 .submit:hover {
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
@@ -193,4 +199,43 @@ canvas{
 
 .r-btn{
   /* transform: rotate(180deg); */
+}
+
+
+/* GENERAL CLASSES */
+.radbtn{
+  border: none;
+  font-weight: bold;
+
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+
+  color: #fff;
+
+  padding: 9px;
+  margin: 0 10px;
+  border-radius: 200px;
+  font-size: 15px;
+  width: 140px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  
+}
+
+.SolganTitle{
+  margin-top: 70px !important;
+  font-weight: bold;
+  margin-bottom: 20px !important;
+}
+
+.txt1{
+  /* font-family:'AnonymousPro','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important; */
+
+  margin:20px  !important;
 }

@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
 function Render({imageSources,bg,stageRef,controllers}) {
   
     const classes = useStyles();
-
-
+    
       return (
         <div className={classes.root}>
             <UI imageSources={imageSources} bg={bg}   controllers={controllers} stageRef={stageRef}/> 
