@@ -64,7 +64,7 @@ const divRef = React.useRef(null);
         </Grid>
 
         <Grid justify="center" container item xs={12} sm={4} lg={4}>
-          <Grid item xs={10} >
+          <Grid item xs={9} >
             <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
           </Grid>
         </Grid>

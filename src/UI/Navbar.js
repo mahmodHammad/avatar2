@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     padding:0
   },
   title: {
+    fontWeight:"bold",
     fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ",
     display: 'none',
     [theme.breakpoints.up('sm')]: {

@@ -11,9 +11,9 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
-    margin:10,
+    margin:"15px 10px",
     padding:10,
-    border: "3px solid",
+    border: "3px solid #333",
     borderRadius: 20,
     boxShadow: "none",
   },
@@ -26,12 +26,19 @@ const useStyles = makeStyles({
     justifyContent: "center"
   },
   btn:{
-   
     width: 180,
     background: "#000000",
     borderRadius: 17.5,
     color: "#fff"
-  }
+  },
+  title:{
+    marginBottom:-5,
+    fontFamily:"'AnonymousPro','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+  },
+  body:{
+    marginBottom:-5,
+    fontFamily:"'AnonymousPro','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+  },
 
 });
 
@@ -47,10 +54,10 @@ export default function MediaCard({img,title,body}) {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="h2" align="center">
+          <Typography className={classes.title}  gutterBottom variant="h6" component="h2" align="center">
            {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" align="center">
+          <Typography className={classes.body} variant="body2" color="textSecondary" component="p" align="center">
            {body}
           </Typography>
         </CardContent>
