@@ -6,6 +6,8 @@ import Container from '@material-ui/core/Container';
 import DisplayAvatar from "./DisplayAvatar"
 import Navbar from "./UI/Navbar"
 import Typography from '@material-ui/core/Typography';
+import CardItems from "./UI/CardItems"
+
 
 function downloadURI(uri, name) {
   var link = document.createElement('a');
@@ -40,7 +42,6 @@ const divRef = React.useRef(null);
   }, []);
   window.onresize=e=>{
     if (divRef.current) {
-      console.log(divRef.current.offsetWidth)
       setDimensions({
         width: divRef.current.offsetWidth,
         height: divRef.current.offsetHeight
@@ -62,7 +63,7 @@ const divRef = React.useRef(null);
             <Grid item xs={12} ><AvatarChange title={ctrl[0]} items={ctrl[1]} changeItem={ctrl[2]}/></Grid>)}
         </Grid>
 
-        <Grid justify="center" container item xs={12} sm={3} lg={4}>
+        <Grid justify="center" container item xs={12} sm={4} lg={4}>
           <Grid item xs={10} >
             <DisplayAvatar divRef={divRef} height={dimensions.width} imageSources={imageSources} bg={bg} stageRef={stageRef} />
           </Grid>
@@ -74,7 +75,9 @@ const divRef = React.useRef(null);
           </Grid>
           )}
           <div className="box">
-           1000/1000 Minted <button onClick={handleExport} className="radbtn submit">Submit</button>
+          <Typography  align="left" component="span" className="mint" variant="body2" noWrap>
+        1000/1000 Minted
+          </Typography><button onClick={handleExport} className="radbtn submit">Mint</button>
         </div> 
         </Grid>
         </Grid>
@@ -83,8 +86,37 @@ const divRef = React.useRef(null);
         <Typography  align="center"  className="txt1" variant="body2" noWrap>
         The following items can be claimed if you own the original NFT in your connected wallet:
           </Typography>
+        <CardItems/>
 
         </Container>
+
+
+        <div className="txtSec">
+      <Container>
+          <Typography className="smallHeader" variant="h6" >
+          About
+          </Typography>
+
+          <Typography className="bigHeader" variant="h4" >
+          customizable, on-chain avatars <br/>
+          to represent your virtual identity
+          </Typography>
+          <Typography  className="bodyHeader" variant="body2" >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Libero nunc consequat interdum varius sit amet mattis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Nec feugiat in fermentum posuere urna nec tincidunt. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Quam vulputate dignissim suspendisse in est ante in nibh. Scelerisque felis imperdiet proin fermentum leo. Massa sed elementum tempus egestas sed. At in tellus integer feugiat scelerisque varius morbi enim nunc. Gravida quis blandit turpis cursus in hac.
+          </Typography>
+
+          <Typography className="smallHeader" variant="h6" >
+          FAQ
+          </Typography>
+          <Typography  className="bodyHeader" variant="body2" >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Libero nunc consequat interdum varius sit amet mattis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Nec feugiat in fermentum posuere urna nec tincidunt. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Quam vulputate dignissim suspendisse in est ante in nibh. Scelerisque felis imperdiet proin fermentum leo. Massa sed elementum tempus egestas sed. At in tellus integer feugiat scelerisque varius morbi enim nunc. Gravida quis blandit turpis cursus in hac.
+          </Typography>
+          </Container>
+        </div>
       </div>
   );
 }
